@@ -1,0 +1,26 @@
+﻿@model FrankyFinance.Models.Group
+
+<div class="container mt-5">
+    <h1>@Model.Name</h1>
+    <p>@Model.Description</p>
+
+    <h3>Expenses</h3>
+    <ul class="list-group">
+        @if (Model.Gastos.Any())
+        {
+            @foreach (var gasto in Model.Gastos)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @gasto.Description - $@gasto.Amount
+                    <span>@gasto.Date.ToShortDateString()</span>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="list-group-item text-center">No expenses added yet.</li>
+        }
+    </ul>
+
+    <a href="/Gastos/CrearGasto?groupId=@Model.Id" class="btn btn-primary mt-3">Add Expense</a>
+</div>

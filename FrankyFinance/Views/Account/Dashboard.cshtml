@@ -1,0 +1,64 @@
+﻿@model FrankyFinance.Models.DashboardViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Welcome, @ViewBag.UserName!</h1>
+    <p class="text-center">Here is an overview of your activities:</p>
+
+    <div class="row text-center mt-5">
+        <!-- Resumen de grupos -->
+        <div class="col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">
+                    <h3>@Model.TotalGroups</h3>
+                    <p>Total Groups</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen de gastos -->
+        <div class="col-md-6">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">
+                    <h3>@Model.TotalExpenses</h3>
+                    <p>Total Expenses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Listado de grupos -->
+    <div class="row mt-5">
+    <div class="col">
+        <h3>Your Groups</h3>
+        <ul class="list-group">
+                @if (Model.Groups.Any())
+                {
+                    @foreach (var group in Model.Groups)
+                    {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            @group.Name
+                                <a href="/Grupos/Detalles/@group.Id" class="btn btn-sm btn-secondary">Details</a>
+                            </li>
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item text-center">You have no groups yet.</li>
+                }
+        </ul>
+    </div>
+</div>
+
+
+    <!-- Accesos rápidos -->
+    <div class="row mt-5 text-center">
+        <div class="col">
+            <a href="/Grupos/CrearGrupo" class="btn btn-primary">Create New Group</a>
+            <a href="/Expenses/Create" class="btn btn-secondary">Add Expense</a>
+        </div>
+    </div>
+</div>
