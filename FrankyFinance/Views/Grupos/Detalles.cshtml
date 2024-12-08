@@ -1,26 +1,68 @@
 ﻿@model FrankyFinance.Models.Group
 
+@{
+    ViewData["Title"] = "Group Details";
+}
+
 <div class="container mt-5">
-    <h1>@Model.Name</h1>
-    <p>@Model.Description</p>
+    <h1 class="text-center">@Model.Name</h1>
+    <p class="text-center">@Model.Description</p>
 
-    <h3>Expenses</h3>
-    <ul class="list-group">
-        @if (Model.Gastos.Any())
-        {
-            @foreach (var gasto in Model.Gastos)
-            {
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    @gasto.Description - $@gasto.Amount
-                    <span>@gasto.Date.ToShortDateString()</span>
-                </li>
-            }
-        }
-        else
-        {
-            <li class="list-group-item text-center">No expenses added yet.</li>
-        }
-    </ul>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
 
-    <a href="/Gastos/CrearGasto?groupId=@Model.Id" class="btn btn-primary mt-3">Add Expense</a>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="row mt-4">
+        <div class="col">
+            <h3>Expenses</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Gastos.Any())
+                    {
+                        @foreach (var gasto in Model.Gastos)
+                        {
+                            <tr>
+                                <td>@gasto.Description</td>
+                                <td>$@gasto.Amount</td>
+                                <td>@gasto.Date.ToShortDateString()</td>
+                                <td>
+                                    <form asp-action="EliminarGasto" asp-controller="Gastos" method="post" onsubmit="return confirm('Are you sure you want to delete this expense?');">
+                                        <input type="hidden" name="id" value="@gasto.Id" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">No expenses added yet.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row mt-4 text-center">
+        <div class="col">
+            <a href="/Gastos/CrearGasto?groupId=@Model.Id" class="btn btn-primary">Add Expense</a>
+            <a href="/Account/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
 </div>

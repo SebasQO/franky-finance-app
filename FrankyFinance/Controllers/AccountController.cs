@@ -74,17 +74,30 @@ namespace FrankyFinance.Controllers
 
             var groups = _context.Grupos.ToList();
             var totalExpenses = _context.Gastos.Count();
+        
+            var recentExpenses = _context.Gastos
+                .OrderByDescending(g => g.Date)
+                .Take(5)
+                .Select(g => new ExpenseViewModel
+                {
+                    Description = g.Description,
+                    Amount = g.Amount,
+                    Date = g.Date.ToShortDateString(),
+                    GroupName = g.Group.Name
+                }).ToList();
 
             var model = new DashboardViewModel
             {
                 TotalGroups = groups.Count,
                 TotalExpenses = totalExpenses,
-                Groups = groups.Select(g => (g.Id, g.Name)).ToList()
+                Groups = groups.Select(g => (g.Id, g.Name)).ToList(),
+                RecentExpenses = recentExpenses
             };
 
             ViewBag.UserName = userName;
             return View(model);
         }
+
 
 
 

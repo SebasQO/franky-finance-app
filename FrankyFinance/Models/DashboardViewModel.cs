@@ -5,5 +5,7 @@
         public int TotalGroups { get; set; }
         public int TotalExpenses { get; set; }
         public List<(int Id, string Name)> Groups { get; set; } = new List<(int, string)>();
+
+        public List<ExpenseViewModel> RecentExpenses { get; set; } = new List<ExpenseViewModel>();
     }
 }
