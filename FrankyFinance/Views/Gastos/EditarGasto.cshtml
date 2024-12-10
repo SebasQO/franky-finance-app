@@ -1,0 +1,26 @@
+﻿@model FrankyFinance.Models.Gasto
+
+<div class="container mt-5">
+    <h1>Edit Expense</h1>
+    <form asp-action="EditarGasto" method="post">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="GroupId" />
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Amount" class="form-label"></label>
+            <input asp-for="Amount" type="number" step="0.01" class="form-control" />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="/Grupos/Detalles/@Model.GroupId" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

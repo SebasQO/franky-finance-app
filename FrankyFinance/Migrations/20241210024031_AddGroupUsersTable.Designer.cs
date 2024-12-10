@@ -4,6 +4,7 @@ using FrankyFinance.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrankyFinance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241210024031_AddGroupUsersTable")]
+    partial class AddGroupUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,32 +24,6 @@ namespace FrankyFinance.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("FrankyFinance.Models.ExpenseSplit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("GastoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GastoId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ExpenseSplits");
-                });
 
             modelBuilder.Entity("FrankyFinance.Models.Gasto", b =>
                 {
@@ -112,40 +89,6 @@ namespace FrankyFinance.Migrations
                     b.ToTable("GroupUsers");
                 });
 
-            modelBuilder.Entity("FrankyFinance.Models.Pago", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PagadorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReceptorId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GroupId");
-
-                    b.HasIndex("PagadorId");
-
-                    b.HasIndex("ReceptorId");
-
-                    b.ToTable("Pagos");
-                });
-
             modelBuilder.Entity("FrankyFinance.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -169,25 +112,6 @@ namespace FrankyFinance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("FrankyFinance.Models.ExpenseSplit", b =>
-                {
-                    b.HasOne("FrankyFinance.Models.Gasto", "Gasto")
-                        .WithMany()
-                        .HasForeignKey("GastoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FrankyFinance.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gasto");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FrankyFinance.Models.Gasto", b =>
@@ -220,40 +144,11 @@ namespace FrankyFinance.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FrankyFinance.Models.Pago", b =>
-                {
-                    b.HasOne("FrankyFinance.Models.Group", "Group")
-                        .WithMany("Pagos")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FrankyFinance.Models.User", "Pagador")
-                        .WithMany()
-                        .HasForeignKey("PagadorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FrankyFinance.Models.User", "Receptor")
-                        .WithMany()
-                        .HasForeignKey("ReceptorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Group");
-
-                    b.Navigation("Pagador");
-
-                    b.Navigation("Receptor");
-                });
-
             modelBuilder.Entity("FrankyFinance.Models.Group", b =>
                 {
                     b.Navigation("Gastos");
 
                     b.Navigation("GroupUsers");
-
-                    b.Navigation("Pagos");
                 });
 
             modelBuilder.Entity("FrankyFinance.Models.User", b =>

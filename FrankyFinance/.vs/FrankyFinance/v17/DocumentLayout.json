@@ -3,76 +3,32 @@
   "WorkspaceRootPath": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\account\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\account\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\expenseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\expenseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\gastoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\gastoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\pagos\\registrarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\pagos\\registrarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\grupos\\creargrupo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\grupos\\creargrupo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\gastos\\creargasto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\gastos\\creargasto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\registrarpagoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\registrarpagoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\gasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\gasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\gruposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\gruposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1194,
-          "SelectedChildIndex": 65,
+          "SelectedChildIndex": 60,
           "Children": [
             {
               "$type": "Bookmark",
@@ -322,111 +278,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GastosController.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GastosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GastosController.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GastosController.cs",
-              "RelativeToolTip": "Controllers\\GastosController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAswFEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:54:48.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Detalles.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
-              "RelativeDocumentMoniker": "Views\\Grupos\\Detalles.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
-              "RelativeToolTip": "Views\\Grupos\\Detalles.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:15.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CrearGrupo.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\CrearGrupo.cshtml",
-              "RelativeDocumentMoniker": "Views\\Grupos\\CrearGrupo.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\CrearGrupo.cshtml",
-              "RelativeToolTip": "Views\\Grupos\\CrearGrupo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:13.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CrearGasto.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Gastos\\CrearGasto.cshtml",
-              "RelativeDocumentMoniker": "Views\\Gastos\\CrearGasto.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Gastos\\CrearGasto.cshtml",
-              "RelativeToolTip": "Views\\Gastos\\CrearGasto.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:11.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:08.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:06.695Z",
+              "WhenOpened": "2024-12-10T04:25:04.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Dashboard.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Account\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Account\\Dashboard.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T04:53:01.654Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-10T04:24:42.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PagosController.cs",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\PagosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PagosController.cs",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\PagosController.cs",
+              "RelativeToolTip": "Controllers\\PagosController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:53:00.455Z",
+              "WhenOpened": "2024-12-10T04:02:35.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
+              "Title": "RegistrarPagoViewModel.cs",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegistrarPagoViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegistrarPagoViewModel.cs",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegistrarPagoViewModel.cs",
+              "RelativeToolTip": "Models\\RegistrarPagoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T04:00:23.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
@@ -434,130 +337,36 @@
               "RelativeToolTip": "Models\\RegisterViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:58.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T04:00:13.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\LoginViewModel.cs",
-              "RelativeToolTip": "Models\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:57.175Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "Detalles.cshtml",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
+              "RelativeDocumentMoniker": "Views\\Grupos\\Detalles.cshtml",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
+              "RelativeToolTip": "Views\\Grupos\\Detalles.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAJAAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T03:59:21.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Gasto.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\Gasto.cs",
-              "RelativeDocumentMoniker": "Models\\Gasto.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\Gasto.cs",
-              "RelativeToolTip": "Models\\Gasto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:56.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExpenseViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\ExpenseViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ExpenseViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\ExpenseViewModel.cs",
-              "RelativeToolTip": "Models\\ExpenseViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:55.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Expense.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\Expense.cs",
-              "RelativeDocumentMoniker": "Models\\Expense.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\Expense.cs",
-              "RelativeToolTip": "Models\\Expense.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:54.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:53.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\DashboardViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\DashboardViewModel.cs",
-              "RelativeToolTip": "Models\\DashboardViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:52.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:50.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:48.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GruposController.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GruposController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GruposController.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GruposController.cs",
-              "RelativeToolTip": "Controllers\\GruposController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwAsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:52:46.245Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "RegistrarPago.cshtml",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Pagos\\RegistrarPago.cshtml",
+              "RelativeDocumentMoniker": "Views\\Pagos\\RegistrarPago.cshtml",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Pagos\\RegistrarPago.cshtml",
+              "RelativeToolTip": "Views\\Pagos\\RegistrarPago.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T03:59:06.546Z"
             }
           ]
         },
         {
-          "DockedWidth": 1058,
+          "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {

@@ -42,6 +42,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FzdG9zXENyZWFyR2FzdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GitHub/franky-finance-app/FrankyFinance/Views/Gastos/EditarGasto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FzdG9zXEVkaXRhckdhc3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/franky-finance-app/FrankyFinance/Views/Grupos/AgregarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXEFncmVnYXJVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GitHub/franky-finance-app/FrankyFinance/Views/Grupos/CrearGrupo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXENyZWFyR3J1cG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GitHub/franky-finance-app/FrankyFinance/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/franky-finance-app/FrankyFinance/Views/Pagos/RegistrarPago.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb3NcUmVnaXN0cmFyUGFnby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GitHub/franky-finance-app/FrankyFinance/Views/Shared/Error.cshtml]

@@ -1,0 +1,41 @@
+﻿@model FrankyFinance.Models.RegistrarPagoViewModel
+
+<div class="container mt-5">
+    <h2 class="text-center">Register Payment for @Model.GroupName</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="RegistrarPago" method="post">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="GroupId" />
+
+        <div class="mb-3">
+            <label asp-for="PagadorId" class="form-label">Payer</label>
+            <select asp-for="PagadorId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))">
+                <option value="">-- Select Payer --</option>
+            </select>
+            <span asp-validation-for="PagadorId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ReceptorId" class="form-label">Receiver</label>
+            <select asp-for="ReceptorId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))">
+                <option value="">-- Select Receiver --</option>
+            </select>
+            <span asp-validation-for="ReceptorId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Amount" class="form-label">Amount</label>
+            <input asp-for="Amount" class="form-control" />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Register Payment</button>
+        <a href="/Grupos/Detalles/@Model.GroupId" class="btn btn-secondary">Back to Group</a>
+    </form>
+</div>

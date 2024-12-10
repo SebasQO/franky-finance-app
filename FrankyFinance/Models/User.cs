@@ -16,5 +16,7 @@ namespace FrankyFinance.Models
 
         [Required]
         public string? Password { get; set; }
+        public ICollection<GroupUser> GroupUsers { get; set; } = new List<GroupUser>();
+
     }
 }

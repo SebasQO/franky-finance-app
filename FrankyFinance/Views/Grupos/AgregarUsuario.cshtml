@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Add User to Group";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Add User to Group</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="AgregarUsuario" method="post">
+        <input type="hidden" name="groupId" value="@ViewBag.GroupId" />
+
+        <div class="mb-3">
+            <label for="userId" class="form-label">Select User</label>
+            <select name="userId" class="form-select" required>
+                <option value="">-- Select a User --</option>
+                @foreach (var user in ViewBag.Users)
+                {
+                    <option value="@user.Id">@user.Name</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add User</button>
+        <a asp-action="Detalles" asp-route-id="@ViewBag.GroupId" class="btn btn-secondary">Back</a>
+    </form>
+</div>
