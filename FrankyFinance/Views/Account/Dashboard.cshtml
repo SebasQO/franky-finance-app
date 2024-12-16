@@ -1,111 +1,150 @@
 ﻿@model FrankyFinance.Models.DashboardViewModel
 
-<div class="container mt-5">
-    <h1 class="text-center">Welcome, @ViewBag.UserName!</h1>
-    <p class="text-center">Here is an overview of your activities:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
 
-    <div class="row text-center mt-5">
-        <div class="col-md-6">
-            <div class="card bg-primary text-white mb-4">
-                <div class="card-body">
-                    <h3>@Model.TotalGroups</h3>
-                    <p>Total Groups</p>
+    <!-- Estilos de Bootstrap y CSS personalizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Encabezado del Dashboard -->
+        <h1 class="text-center text-white">Welcome, @ViewBag.UserName!</h1>
+        <p class="text-center text-white">Here is an overview of your activities:</p>
+
+        <!-- Tarjetas de resumen -->
+        <div class="row text-center mt-5">
+            <!-- Total de grupos -->
+            <div class="col-md-4">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">
+                        <h3>@Model.TotalGroups</h3>
+                        <p>Total Groups</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total de gastos -->
+            <div class="col-md-4">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">
+                        <h3>$@Model.TotalExpenses</h3>
+                        <p>Total Expenses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total de pagos -->
+            <div class="col-md-4">
+                <div class="card bg-info text-white mb-4">
+                    <div class="card-body">
+                        <h3>$@Model.TotalPagos</h3>
+                        <p>Total Payments</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card bg-success text-white mb-4">
-                <div class="card-body">
-                    <h3>@Model.TotalExpenses</h3>
-                    <p>Total Expenses</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col">
-            <h3>Your Groups</h3>
-            <ul class="list-group">
-                @if (Model.Groups.Any())
-                {
-                    @foreach (var group in Model.Groups)
+        <!-- Lista de grupos -->
+        <div class="row mt-5">
+            <div class="col">
+                <h3 class="text-white">Your Groups</h3>
+                <ul class="list-group">
+                    @if (Model.Groups.Any())
                     {
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            @group.Name
-                            <div>
-                                <a href="/Grupos/Detalles/@group.Id" class="btn btn-sm btn-secondary">Details</a>
-
-                                <form asp-action="EliminarGrupo" asp-controller="Grupos" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this group?');">
-                                    <input type="hidden" name="id" value="@group.Id" />
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
-                            </div>
-                        </li>
-
-                    }
-                }
-                else
-                {
-                    <li class="list-group-item text-center">No groups created yet.</li>
-                }
-            </ul>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col">
-            <h3>Recent Expenses</h3>
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Group</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model.RecentExpenses.Any())
-                    {
-                        @foreach (var expense in Model.RecentExpenses)
+                        @foreach (var group in Model.Groups)
                         {
-                            <tr>
-                                <td>@expense.Description</td>
-                                <td>$@expense.Amount</td>
-                                <td>@expense.Date</td>
-                                <td>@expense.GroupName</td>
-                                <td>
-                                    @* <a href="/Gastos/EditarGasto?id=@expense.Id" class="btn btn-warning btn-sm">Edit</a> *@
-                                    <form asp-action="EditarGasto" asp-controller="Gastos" method="post">
-                                        <input type="hidden" name="id" value="@expense.Id" />
-                                        <button type="submit" class="btn btn-danger btn-sm">Edit</button>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @group.Name
+                                <div>
+                                    <!-- Enlace a detalles del grupo -->
+                                    <a href="/Grupos/Detalles/@group.Id" class="btn btn-sm btn-secondary">Details</a>
+                                    
+                                    <!-- Formulario para eliminar grupo -->
+                                    <form asp-action="EliminarGrupo" asp-controller="Grupos" method="post" style="display: inline;" 
+                                          onsubmit="return confirm('Are you sure you want to delete this group?');">
+                                        <input type="hidden" name="id" value="@group.Id" />
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                     </form>
-                                    <form asp-action="EliminarGasto" asp-controller="Gastos" method="post" onsubmit="return confirm('Are you sure you want to delete this expense?');">
-                                        <input type="hidden" name="id" value="@expense.Id" />
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                                </div>
+                            </li>
                         }
                     }
                     else
                     {
-                        <tr>
-                            <td colspan="5" class="text-center">No expenses added yet.</td>
-                        </tr>
+                        <li class="list-group-item text-center">No groups created yet.</li>
                     }
-                </tbody>
+                </ul>
+            </div>
+        </div>
 
-            </table>
+        <!-- Gastos recientes -->
+        <div class="row mt-5">
+            <div class="col">
+                <h3 class="text-white">Recent Expenses</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Group</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.RecentExpenses.Any())
+                        {
+                            @foreach (var expense in Model.RecentExpenses)
+                            {
+                                <tr>
+                                    <td>@expense.Description</td>
+                                    <td>$@expense.Amount</td>
+                                    <td>@DateTime.Parse(expense.Date).ToShortDateString()</td>
+                                    <td>@expense.GroupName</td>
+                                    <td>
+                                        <!-- Botón para editar gasto -->
+                                        <form asp-action="EditarGasto" asp-controller="Gastos" method="post" style="display:inline;">
+                                            <input type="hidden" name="id" value="@expense.Id" />
+                                            <button type="submit" class="btn btn-warning btn-sm">Edit</button>
+                                        </form>
+                                        <!-- Botón para eliminar gasto -->
+                                        <form asp-action="EliminarGasto" asp-controller="Gastos" method="post" style="display:inline;" 
+                                              onsubmit="return confirm('Are you sure you want to delete this expense?');">
+                                            <input type="hidden" name="id" value="@expense.Id" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="5" class="text-center">No expenses added yet.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Acciones rápidas -->
+        <div class="row mt-5 text-center">
+            <div class="col">
+                <a href="/Grupos/CrearGrupo" class="btn btn-primary">Create New Group</a>
+            </div>
         </div>
     </div>
 
-    <div class="row mt-5 text-center">
-        <div class="col">
-            <a href="/Grupos/CrearGrupo" class="btn btn-primary">Create New Group</a>
-            <a href="/Gastos/CrearGasto" class="btn btn-secondary">Add Expense</a>
-        </div>
-    </div>
-</div>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

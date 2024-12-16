@@ -1,44 +1,94 @@
 ﻿@model FrankyFinance.Models.LoginViewModel
 
 @{
-    Layout = null; 
+    Layout = null; // Define que no se utiliza un layout principal para esta vista
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franky Finance - Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/css/login.css">
-</head>
-<body class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
 
-    <div class="card shadow-lg p-4" id="login-card">
+    <!-- Enlaces a Bootstrap y estilos personalizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<!-- Cuerpo de la página: centrado vertical y horizontalmente -->
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-dark text-white">
+
+    <!-- Tarjeta de inicio de sesión -->
+    <div class="card p-4 shadow-lg" id="login-card">
+        <!-- Encabezado con el logo y título -->
         <div class="text-center mb-4">
-            <img src="~/img/FrankyLogo.png" alt="Franky Finance Logo" style="width: 120px;">
-            <h2>Login</h2>
+            <img src="~/img/FrankyLogo.png" alt="Franky Finance Logo" style="width: 150px;">
+            <h2 class="text-white">Franky Finance</h2>
         </div>
+
+        <!-- Formulario de inicio de sesión -->
         <form asp-action="Login" method="post">
-            @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken() <!-- Token de seguridad CSRF -->
+
+            <!-- Campo de correo electrónico -->
             <div class="mb-3">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" type="email" class="form-control" placeholder="Email">
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" type="password" class="form-control" />
+
+            <!-- Campo de contraseña con botón de "mostrar/ocultar" -->
+            <div class="password-container mb-3 position-relative">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                <!-- Icono de mostrar/ocultar contraseña -->
+                <i class="bi bi-eye-slash toggle-password position-absolute end-0 me-3 mt-2"
+                   id="toggle-password" style="cursor: pointer; color: white;"></i>
+                <a href="#" class="text-white small position-absolute end-0 me-3 mt-2">Forgot Password?</a>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
-            <div class="text-center">
-                <p class="small">Don't have an account? <a href="~/Account/Register" class="text-light">Register here</a></p>
+
+            <!-- Botón de inicio de sesión -->
+            <div>
+                <button type="submit" class="btn btn-primary w-100 mb-3 mt-5">Sign In</button>
+                <p class="text-center text-white">Or Sign in with</p>
+
+                <!-- Botón de inicio de sesión con Google -->
+                <div class="social-login d-flex justify-content-center mb-3">
+                    <a href="/Account/GoogleLogin" class="btn btn-outline-light mx-2">
+                        <i class="bi bi-google"></i>
+                    </a>
+                </div>
+
+                <!-- Enlace para registrarse -->
+                <p class="text-center text-white">
+                    Don’t have an account? 
+                    <a href="~/Account/Register" class="text-white" style="text-decoration: none;">Request Now</a>
+                </p>
             </div>
         </form>
     </div>
 
+    <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para mostrar/ocultar la contraseña -->
+    <script>
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            const passwordInput = document.querySelector('input[type="password"]');
+            const toggleIcon = this;
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("bi-eye-slash");
+                toggleIcon.classList.add("bi-eye");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("bi-eye");
+                toggleIcon.classList.add("bi-eye-slash");
+            }
+        });
+    </script>
 </body>
 </html>

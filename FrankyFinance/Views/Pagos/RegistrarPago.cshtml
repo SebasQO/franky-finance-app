@@ -1,18 +1,23 @@
 ﻿@model FrankyFinance.Models.RegistrarPagoViewModel
 
+<!-- Contenedor principal -->
 <div class="container mt-5">
+    <!-- Encabezado de la página -->
     <h2 class="text-center">Register Payment for @Model.GroupName</h2>
 
+    <!-- Mensaje de éxito temporal -->
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success">@TempData["SuccessMessage"]</div>
     }
 
+    <!-- Formulario para registrar un pago -->
     <form asp-action="RegistrarPago" method="post">
-        @Html.AntiForgeryToken()
-
+        @Html.AntiForgeryToken() <!-- Token de seguridad CSRF -->
+        <!-- Campo oculto para el ID del grupo -->
         <input type="hidden" asp-for="GroupId" />
 
+        <!-- Selector del pagador -->
         <div class="mb-3">
             <label asp-for="PagadorId" class="form-label">Payer</label>
             <select asp-for="PagadorId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))">
@@ -21,6 +26,7 @@
             <span asp-validation-for="PagadorId" class="text-danger"></span>
         </div>
 
+        <!-- Selector del receptor -->
         <div class="mb-3">
             <label asp-for="ReceptorId" class="form-label">Receiver</label>
             <select asp-for="ReceptorId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))">
@@ -29,12 +35,14 @@
             <span asp-validation-for="ReceptorId" class="text-danger"></span>
         </div>
 
+        <!-- Campo para el monto del pago -->
         <div class="mb-3">
             <label asp-for="Amount" class="form-label">Amount</label>
             <input asp-for="Amount" class="form-control" />
             <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
 
+        <!-- Botones de acción -->
         <button type="submit" class="btn btn-success">Register Payment</button>
         <a href="/Grupos/Detalles/@Model.GroupId" class="btn btn-secondary">Back to Group</a>
     </form>

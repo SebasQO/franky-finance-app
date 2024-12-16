@@ -4,21 +4,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FrankyFinance.Controllers
 {
+    // Controlador para gestionar los gastos: creación, eliminación y edición
     public class GastosController : Controller
     {
         private readonly AppDbContext _context;
 
+        // Constructor que inicializa el contexto de la base de datos
         public GastosController(AppDbContext context)
         {
             _context = context;
         }
 
+        // Muestra el formulario para crear un gasto en un grupo específico
         [HttpGet]
         public IActionResult CrearGasto(int groupId)
         {
-            var group = _context.Grupos.Include(g => g.GroupUsers).ThenInclude(gu => gu.User).FirstOrDefault(g => g.Id == groupId);
+            // Busca el grupo y sus usuarios
+            var group = _context.Grupos
+                .Include(g => g.GroupUsers)
+                .ThenInclude(gu => gu.User)
+                .FirstOrDefault(g => g.Id == groupId);
+
             if (group == null) return NotFound();
 
+            // Prepara el modelo con divisiones inicializadas en 0
             var model = new ExpenseSplitViewModel
             {
                 GroupId = groupId,
@@ -30,15 +39,18 @@ namespace FrankyFinance.Controllers
                 }).ToList()
             };
 
+            // Enviar lista de usuarios a la vista
             ViewBag.Users = group.GroupUsers.Select(gu => gu.User).ToList();
             return View(model);
         }
 
+        // Procesa el formulario para crear un nuevo gasto
         [HttpPost]
         public IActionResult CrearGasto(ExpenseSplitViewModel model)
         {
             if (ModelState.IsValid)
             {
+                // Crea el gasto principal
                 var gasto = new Gasto
                 {
                     Description = model.Description,
@@ -50,6 +62,7 @@ namespace FrankyFinance.Controllers
                 _context.Gastos.Add(gasto);
                 _context.SaveChanges();
 
+                // Guarda las divisiones del gasto para los usuarios seleccionados
                 foreach (var division in model.Divisions)
                 {
                     if (model.SelectedUserIds.Contains(division.UserId))
@@ -68,13 +81,12 @@ namespace FrankyFinance.Controllers
                 return RedirectToAction("Detalles", "Grupos", new { id = model.GroupId });
             }
 
+            // Si hay errores, se recarga la lista de usuarios
             ViewBag.Users = _context.Users.ToList();
             return View(model);
         }
 
-
-
-
+        // Elimina un gasto por su ID
         [HttpPost]
         public IActionResult EliminarGasto(int id)
         {
@@ -94,6 +106,7 @@ namespace FrankyFinance.Controllers
             return RedirectToAction("Dashboard", "Account");
         }
 
+        // Muestra el formulario para editar un gasto existente
         [HttpGet]
         public IActionResult EditarGasto(int id)
         {
@@ -106,6 +119,8 @@ namespace FrankyFinance.Controllers
 
             return View(gasto);
         }
+
+        // Procesa la actualización de un gasto existente
         [HttpPost]
         public IActionResult EditarGasto(Gasto gasto)
         {
@@ -114,9 +129,10 @@ namespace FrankyFinance.Controllers
                 var existingGasto = _context.Gastos.FirstOrDefault(g => g.Id == gasto.Id);
                 if (existingGasto != null)
                 {
+                    // Actualiza los campos del gasto
                     existingGasto.Description = gasto.Description;
                     existingGasto.Amount = gasto.Amount;
-                    existingGasto.Date = DateTime.Now; // Fecha de última modificación
+                    existingGasto.Date = DateTime.Now;
 
                     _context.SaveChanges();
                     TempData["SuccessMessage"] = "Expense updated successfully!";
@@ -127,7 +143,5 @@ namespace FrankyFinance.Controllers
             }
             return View(gasto);
         }
-
-
     }
 }

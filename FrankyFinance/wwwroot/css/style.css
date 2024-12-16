@@ -1,0 +1,182 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+* {
+    padding: 0%;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+body {
+    background-color: #212A31;
+    overflow-x: hidden;
+}
+
+#login-card, #register-card, #create-expense-card, #modify-card {
+    background-color: #2E3944;
+    border-radius: 10px;
+    width: 400px;
+}
+
+
+    #login-card h2 {
+        color: #f8f9fa;
+    }
+
+.form-control {
+    background-color: #212A31;
+    color: white;
+    border: none;
+    font-weight: 300;
+    padding: 0.75rem;
+}
+
+    .form-control:focus {
+        background-color: #212A31;
+        color: white;
+        border: none;
+        font-weight: light;
+    }
+
+    .form-control::placeholder {
+        color: white;
+    }
+
+.btn-primary {
+    background-color: #374a5e;
+    border: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+    .btn-primary:hover {
+        background-color: #2c3e50;
+    }
+
+.social-login button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #2c3e50;
+    }
+
+
+#forgot {
+    text-decoration: none;
+}
+
+.password-container {
+    position: relative;
+}
+
+    .password-container input {
+        padding-right: 40px; /* Espacio para el ícono dentro del input */
+    }
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d; /* Color del ícono */
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #6c757d; /* Color del enlace */
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+    .forgot-password:hover {
+        color: #007bff; /* Color al pasar el cursor */
+    }
+
+.social-login button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 15%;
+    padding: 8px;
+    color: white;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+    .sidebar h2 {
+        font-weight: bold;
+    }
+
+.nav-link {
+    color: #adb5bd;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: #495057;
+        color: white;
+    }
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+/* .card:hover {
+    transform: scale(1.03);
+} */
+
+.content h5 {
+    font-weight: bold;
+    color: #333;
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "setJ95i7jOmdSZGfO130G88ehOUsf7G55N3gCqpmdV8=",
+  "Hash": "hkV/qlrBnWEQZN/uYfuOhPr9EqHaYt3P5tEqvdAIsQM=",
   "Source": "FrankyFinance",
   "BasePath": "_content/FrankyFinance",
   "Mode": "Default",
@@ -946,6 +946,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\wwwroot\\css\\style.css",
+      "SourceId": "FrankyFinance",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\wwwroot\\",
+      "BasePath": "_content/FrankyFinance",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\wwwroot\\favicon.ico",

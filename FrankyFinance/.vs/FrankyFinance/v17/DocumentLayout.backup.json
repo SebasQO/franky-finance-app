@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\pagos\\registrarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\pagos\\registrarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\registrarpagoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\registrarpagoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1194,
-          "SelectedChildIndex": 59,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -267,71 +246,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PagosController.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\PagosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PagosController.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\PagosController.cs",
-              "RelativeToolTip": "Controllers\\PagosController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowDgAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T04:02:35.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegistrarPagoViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegistrarPagoViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\RegistrarPagoViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegistrarPagoViewModel.cs",
-              "RelativeToolTip": "Models\\RegistrarPagoViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T04:00:23.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Models\\RegisterViewModel.cs",
-              "RelativeToolTip": "Models\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T04:00:13.579Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Detalles.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
-              "RelativeDocumentMoniker": "Views\\Grupos\\Detalles.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
-              "RelativeToolTip": "Views\\Grupos\\Detalles.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAJAAAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-10T03:59:21.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistrarPago.cshtml",
-              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Pagos\\RegistrarPago.cshtml",
-              "RelativeDocumentMoniker": "Views\\Pagos\\RegistrarPago.cshtml",
-              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Pagos\\RegistrarPago.cshtml",
-              "RelativeToolTip": "Views\\Pagos\\RegistrarPago.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-10T03:59:06.546Z",
-              "EditorCaption": ""
             }
           ]
         },

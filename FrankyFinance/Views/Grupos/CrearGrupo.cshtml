@@ -1,20 +1,28 @@
 ﻿@model FrankyFinance.Models.Group
 
+<!-- Contenedor principal -->
 <div class="container mt-5">
+    <!-- Título de la página -->
     <h1>Create a New Group</h1>
-    <form asp-action="CrearGrupo" method="post">
-        @Html.AntiForgeryToken()
 
+    <!-- Formulario para crear un nuevo grupo -->
+    <form asp-action="CrearGrupo" method="post">
+        @Html.AntiForgeryToken() <!-- Token de seguridad CSRF -->
+        <!-- Campo para el nombre del grupo -->
         <div class="mb-3">
             <label asp-for="Name" class="form-label"></label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+
+        <!-- Campo para la descripción del grupo -->
         <div class="mb-3">
             <label asp-for="Description" class="form-label"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
+
+        <!-- Botón para enviar el formulario -->
         <button type="submit" class="btn btn-primary">Create Group</button>
     </form>
 </div>

@@ -1,25 +1,32 @@
 ﻿@model FrankyFinance.Models.Gasto
 
+<!-- Contenedor principal -->
 <div class="container mt-5">
+    <!-- Título de la página -->
     <h1>Edit Expense</h1>
-    <form asp-action="EditarGasto" method="post">
-        @Html.AntiForgeryToken()
 
+    <!-- Formulario para editar el gasto -->
+    <form asp-action="EditarGasto" method="post">
+        @Html.AntiForgeryToken() <!-- Token de seguridad CSRF -->
+        <!-- Campos ocultos para el ID del gasto y el ID del grupo -->
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="GroupId" />
 
+        <!-- Campo para la descripción del gasto -->
         <div class="mb-3">
             <label asp-for="Description" class="form-label"></label>
             <input asp-for="Description" class="form-control" />
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
+        <!-- Campo para el monto del gasto -->
         <div class="mb-3">
             <label asp-for="Amount" class="form-label"></label>
             <input asp-for="Amount" type="number" step="0.01" class="form-control" />
             <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
 
+        <!-- Botones de acción -->
         <button type="submit" class="btn btn-primary">Save Changes</button>
         <a href="/Grupos/Detalles/@Model.GroupId" class="btn btn-secondary">Cancel</a>
     </form>

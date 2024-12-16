@@ -9,6 +9,7 @@ D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\FrankyFinance.pdb
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Azure.Core.dll
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Azure.Identity.dll
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Humanizer.dll
+D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 D:\GitHub\franky-finance-app\FrankyFinance\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
