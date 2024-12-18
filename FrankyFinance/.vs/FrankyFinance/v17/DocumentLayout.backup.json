@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\grupos\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\views\\gastos\\editargasto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:views\\gastos\\editargasto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|d:\\github\\franky-finance-app\\frankyfinance\\controllers\\gastoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A364874-535A-41D2-9FB3-1071C0E4A091}|FrankyFinance.csproj|solutionrelative:controllers\\gastoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1194,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 59,
           "Children": [
             {
               "$type": "Bookmark",
@@ -246,6 +259,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Detalles.cshtml",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
+              "RelativeDocumentMoniker": "Views\\Grupos\\Detalles.cshtml",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Grupos\\Detalles.cshtml",
+              "RelativeToolTip": "Views\\Grupos\\Detalles.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T00:11:22.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditarGasto.cshtml",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Gastos\\EditarGasto.cshtml",
+              "RelativeDocumentMoniker": "Views\\Gastos\\EditarGasto.cshtml",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Views\\Gastos\\EditarGasto.cshtml",
+              "RelativeToolTip": "Views\\Gastos\\EditarGasto.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-18T00:10:56.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GastosController.cs",
+              "DocumentMoniker": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GastosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GastosController.cs",
+              "ToolTip": "D:\\GitHub\\franky-finance-app\\FrankyFinance\\Controllers\\GastosController.cs",
+              "RelativeToolTip": "Controllers\\GastosController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAIAwwIMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T00:10:22.54Z",
+              "EditorCaption": ""
             }
           ]
         },

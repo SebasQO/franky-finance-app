@@ -4,12 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FrankyFinance.Controllers
 {
-    // Controlador para la gestión de grupos: creación, eliminación, detalles y gestión de usuarios
     public class GruposController : Controller
     {
         private readonly AppDbContext _context;
 
-        // Constructor que inicializa el contexto de base de datos
         public GruposController(AppDbContext context)
         {
             _context = context;
@@ -19,28 +17,56 @@ namespace FrankyFinance.Controllers
         [HttpGet]
         public IActionResult CrearGrupo()
         {
+            var userId = HttpContext.Session.GetInt32("UserId"); // Obtén el UserId de la sesión
+            ViewBag.UserId = userId;
             return View();
         }
 
-        // Procesa la creación de un nuevo grupo
+        // Procesa la creación de un nuevo grupo y asigna al creador como "Owner"
         [HttpPost]
         public IActionResult CrearGrupo(Group group)
         {
             if (ModelState.IsValid)
             {
+                // Guardar el grupo
                 _context.Grupos.Add(group);
                 _context.SaveChanges();
+
+                // Obtener el UserId de la sesión
+                var userId = HttpContext.Session.GetInt32("UserId");
+
+                if (userId == null || !_context.Users.Any(u => u.Id == userId.Value))
+                {
+                    Console.WriteLine("UserId is invalid or does not exist.");
+                    return RedirectToAction("Login", "Account");
+                }
+
+                // Asignar el usuario actual como administrador del grupo
+                var groupUser = new GroupUser
+                {
+                    GroupId = group.Id,
+                    UserId = userId.Value,
+                    Role = "Owner"
+                };
+
+                _context.GroupUsers.Add(groupUser);
+                _context.SaveChanges();
+
                 return RedirectToAction("Dashboard", "Account");
             }
 
             return View(group);
         }
 
+
+
+
         // Muestra los detalles de un grupo específico
         [HttpGet]
         public IActionResult Detalles(int id)
         {
-            // Obtiene el grupo con todos sus datos relacionados (gastos, pagos y usuarios)
+            var currentUserId = HttpContext.Session.GetInt32("UserId");
+
             var group = _context.Grupos
                 .Include(g => g.Gastos)
                 .Include(g => g.Pagos)
@@ -53,7 +79,10 @@ namespace FrankyFinance.Controllers
 
             if (group == null) return NotFound();
 
-            // Genera un resumen de gastos por fecha
+            // Verificar si el usuario actual es Owner
+            ViewBag.IsOwner = _context.GroupUsers
+                .Any(gu => gu.GroupId == id && gu.UserId == currentUserId && gu.Role == "Owner");
+
             var resumenGastos = group.Gastos
                 .GroupBy(g => g.Date.Date)
                 .Select(g => new
@@ -64,61 +93,6 @@ namespace FrankyFinance.Controllers
                 .OrderBy(r => r.Fecha)
                 .ToList();
 
-            // Genera un resumen de pagos entre usuarios
-            var resumenPagos = group.Pagos
-                .GroupBy(p => new { PagadorName = p.Pagador.Name, ReceptorName = p.Receptor.Name })
-                .Select(p => new
-                {
-                    Pagador = p.Key.PagadorName,
-                    Receptor = p.Key.ReceptorName,
-                    Total = p.Sum(x => x.Amount)
-                })
-                .ToList();
-
-            // Calcula saldos pendientes de cada usuario
-            var saldos = new Dictionary<string, decimal>();
-
-            foreach (var member in group.GroupUsers.Select(gu => gu.User))
-            {
-                saldos[member.Name] = 0;
-            }
-
-            // Ajusta los saldos según gastos y pagos
-            foreach (var gasto in group.Gastos)
-            {
-                saldos[gasto.Group.GroupUsers.FirstOrDefault(u => u.User.Id == gasto.GroupId)?.User.Name ?? "Unknown"] += gasto.Amount;
-            }
-
-            foreach (var pago in group.Pagos)
-            {
-                saldos[pago.Pagador.Name] -= pago.Amount;
-                saldos[pago.Receptor.Name] += pago.Amount;
-            }
-
-            // Calcula las deudas entre usuarios
-            var deudas = new List<ResumenDeudasViewModel>();
-
-            foreach (var acreedor in saldos.Where(s => s.Value > 0))
-            {
-                foreach (var deudor in saldos.Where(s => s.Value < 0))
-                {
-                    var monto = Math.Min(acreedor.Value, Math.Abs(deudor.Value));
-                    if (monto > 0)
-                    {
-                        deudas.Add(new ResumenDeudasViewModel
-                        {
-                            Deudor = deudor.Key,
-                            Acreedor = acreedor.Key,
-                            Monto = monto
-                        });
-
-                        saldos[acreedor.Key] -= monto;
-                        saldos[deudor.Key] += monto;
-                    }
-                }
-            }
-
-            // Construye el modelo para la vista
             var model = new ResumenGastosViewModel
             {
                 Id = group.Id,
@@ -134,11 +108,38 @@ namespace FrankyFinance.Controllers
 
                 Gastos = group.Gastos.ToList(),
                 GroupUsers = group.GroupUsers.ToList(),
-                Pagos = group.Pagos.ToList(),
-                ResumenDeudas = deudas
+                Pagos = group.Pagos.ToList()
             };
 
             return View(model);
+        }
+
+        // Elimina un miembro del grupo (solo Owner puede realizarlo)
+        [HttpPost]
+        public IActionResult EliminarMiembro(int groupId, int userId)
+        {
+            var currentUserId = HttpContext.Session.GetInt32("UserId");
+
+            // Verificar si el usuario actual es Owner
+            var isOwner = _context.GroupUsers
+                .Any(gu => gu.GroupId == groupId && gu.UserId == currentUserId && gu.Role == "Owner");
+
+            if (!isOwner)
+            {
+                TempData["ErrorMessage"] = "You do not have permission to remove members.";
+                return RedirectToAction("Detalles", new { id = groupId });
+            }
+
+            // Eliminar el miembro
+            var member = _context.GroupUsers.FirstOrDefault(gu => gu.GroupId == groupId && gu.UserId == userId);
+            if (member != null)
+            {
+                _context.GroupUsers.Remove(member);
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Member removed successfully!";
+            }
+
+            return RedirectToAction("Detalles", new { id = groupId });
         }
 
         // Elimina un grupo si no tiene gastos asociados
@@ -146,7 +147,7 @@ namespace FrankyFinance.Controllers
         public IActionResult EliminarGrupo(int id)
         {
             var grupo = _context.Grupos
-                .Include(g => g.Gastos)
+                .Include(g => g.Gastos) // Verifica si hay gastos relacionados
                 .FirstOrDefault(g => g.Id == id);
 
             if (grupo == null)
@@ -168,33 +169,113 @@ namespace FrankyFinance.Controllers
             return RedirectToAction("Dashboard", "Account");
         }
 
-        // Muestra el formulario para agregar un usuario a un grupo
+
+        [HttpGet]
+        public IActionResult EditarGrupo(int id)
+        {
+            // Obtener el ID del usuario actual
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                TempData["ErrorMessage"] = "You must be logged in.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Verificar si el usuario es administrador del grupo
+            var isAdmin = _context.GroupUsers.Any(gu => gu.GroupId == id && gu.UserId == userId && gu.Role == "Admin");
+
+            if (!isAdmin)
+            {
+                TempData["ErrorMessage"] = "You do not have permission to edit this group.";
+                return RedirectToAction("Detalles", new { id });
+            }
+
+            // Obtener el grupo
+            var group = _context.Grupos.Find(id);
+            if (group == null) return NotFound();
+
+            return View(group);
+        }
+
+        [HttpPost]
+        public IActionResult EditarGrupo(Group model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Grupos.Update(model);
+                _context.SaveChanges();
+
+                TempData["SuccessMessage"] = "Group updated successfully!";
+                return RedirectToAction("Detalles", new { id = model.Id });
+            }
+
+            return View(model);
+        }
+
         [HttpGet]
         public IActionResult AgregarUsuario(int groupId)
         {
             var group = _context.Grupos.FirstOrDefault(g => g.Id == groupId);
-            if (group == null) return NotFound();
+            if (group == null)
+            {
+                return NotFound();
+            }
 
-            ViewBag.GroupId = groupId;
-            ViewBag.Users = _context.Users.ToList();
-            return View();
+            var viewModel = new GroupUserViewModel
+            {
+                GroupId = groupId, // Asigna el ID del grupo aquí
+                Users = _context.Users.ToList() // Usuarios disponibles
+            };
+
+            return View(viewModel);
         }
 
-        // Procesa la adición de un usuario a un grupo
+
+
         [HttpPost]
         public IActionResult AgregarUsuario(int groupId, int userId)
         {
+            // Validar que el grupo existe
+            var group = _context.Grupos.FirstOrDefault(g => g.Id == groupId);
+            if (group == null)
+            {
+                return NotFound("The group does not exist.");
+            }
+
+            // Validar que el usuario existe
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+            {
+                return NotFound("The user does not exist.");
+            }
+
+            // Verificar si el usuario ya pertenece al grupo
+            var existingGroupUser = _context.GroupUsers
+                .FirstOrDefault(gu => gu.GroupId == groupId && gu.UserId == userId);
+
+            if (existingGroupUser != null)
+            {
+                ModelState.AddModelError("", "The user is already in the group.");
+                return RedirectToAction("Detalles", "Grupos", new { id = groupId });
+            }
+
+            // Agregar el usuario al grupo
             var groupUser = new GroupUser
             {
                 GroupId = groupId,
-                UserId = userId
+                UserId = userId,
+                Role = "Member" // Asigna el rol por defecto
             };
 
             _context.GroupUsers.Add(groupUser);
             _context.SaveChanges();
 
-            TempData["SuccessMessage"] = "User added to the group successfully!";
-            return RedirectToAction("Detalles", new { id = groupId });
+            // Redirigir a la vista de detalles
+            TempData["SuccessMessage"] = "User added successfully!";
+            return RedirectToAction("Detalles", "Grupos", new { id = groupId });
         }
+
+
     }
 }

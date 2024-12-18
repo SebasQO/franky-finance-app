@@ -1,37 +1,19 @@
-﻿@{
-    ViewBag.Title = "Add User to Group"; // Configuración del título de la página
-}
+﻿@model FrankyFinance.Models.GroupUserViewModel
 
-<!-- Contenedor principal -->
-<div class="container mt-5">
-    <!-- Encabezado -->
-    <h2 class="text-center">Add User to Group</h2>
+<form asp-action="AgregarUsuario" method="post">
+    <!-- Campo oculto para GroupId -->
+    <input type="hidden" asp-for="GroupId" />
 
-    <!-- Mensaje de éxito si el usuario fue agregado correctamente -->
-    @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-    }
+    <div class="mb-3">
+        <label for="userId" class="form-label">Select User</label>
+        <select name="userId" class="form-select" required>
+            <option value="">-- Select User --</option>
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">@user.Name</option>
+            }
+        </select>
+    </div>
 
-    <!-- Formulario para agregar un usuario al grupo -->
-    <form asp-action="AgregarUsuario" method="post">
-        <!-- Campo oculto que envía el ID del grupo -->
-        <input type="hidden" name="groupId" value="@ViewBag.GroupId" />
-
-        <!-- Selección de usuario -->
-        <div class="mb-3">
-            <label for="userId" class="form-label">Select User</label>
-            <select name="userId" class="form-select" required>
-                <option value="">-- Select a User --</option>
-                @foreach (var user in ViewBag.Users)
-                {
-                    <option value="@user.Id">@user.Name</option>
-                }
-            </select>
-        </div>
-
-        <!-- Botones de acción -->
-        <button type="submit" class="btn btn-primary">Add User</button>
-        <a asp-action="Detalles" asp-route-id="@ViewBag.GroupId" class="btn btn-secondary">Back</a>
-    </form>
-</div>
+    <button type="submit" class="btn btn-primary">Add User</button>
+</form>

@@ -13,6 +13,8 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
 // Configurar DbContext
 builder.Services.AddControllersWithViews();
@@ -33,9 +35,41 @@ builder.Services.AddAuthentication(options =>
 })
 .AddGoogle(googleOptions =>
 {
-    googleOptions.ClientId = "ClientId";
-    googleOptions.ClientSecret = "ClientSecret";
-    googleOptions.CallbackPath = "/signin-google"; // Asegúrate que coincida con Google Cloud
+    googleOptions.ClientId = "ID";
+    googleOptions.ClientSecret = "Scret";
+    googleOptions.CallbackPath = "/signin-google"; 
+
+    googleOptions.Events.OnCreatingTicket = async context =>
+    {
+        var dbContext = context.HttpContext.RequestServices.GetRequiredService<AppDbContext>();
+
+        // Obtener la información del usuario autenticado desde Google
+        var email = context.Principal.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+        var name = context.Principal.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+
+        if (!string.IsNullOrEmpty(email))
+        {
+            // Verificar si el usuario ya existe en la base de datos
+            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+            if (user == null)
+            {
+                // Si el usuario no existe, lo creamos
+                user = new User
+                {
+                    Name = name ?? "Google User",
+                    Email = email,
+                    Password = ""
+                };
+
+                dbContext.Users.Add(user);
+                await dbContext.SaveChangesAsync();
+            }
+
+            // Guardar el nombre del usuario en la sesión
+            context.HttpContext.Session.SetString("UserName", user.Name);
+        }
+    };
 });
 
 var app = builder.Build();

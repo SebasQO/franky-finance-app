@@ -105,6 +105,10 @@ namespace FrankyFinance.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("GroupId", "UserId");
 
                     b.HasIndex("UserId");
@@ -212,7 +216,7 @@ namespace FrankyFinance.Migrations
                     b.HasOne("FrankyFinance.Models.User", "User")
                         .WithMany("GroupUsers")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Group");

@@ -1,33 +1,37 @@
 ﻿@model FrankyFinance.Models.Gasto
 
-<!-- Contenedor principal -->
-<div class="container mt-5">
-    <!-- Título de la página -->
-    <h1>Edit Expense</h1>
+@{
+    ViewData["Title"] = "Edit Expense";
+}
 
-    <!-- Formulario para editar el gasto -->
+<div class="container mt-5">
+    <h2 class="text-white">Edit Expense</h2>
+
     <form asp-action="EditarGasto" method="post">
-        @Html.AntiForgeryToken() <!-- Token de seguridad CSRF -->
-        <!-- Campos ocultos para el ID del gasto y el ID del grupo -->
+        @Html.AntiForgeryToken()
+
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="GroupId" />
 
-        <!-- Campo para la descripción del gasto -->
         <div class="mb-3">
-            <label asp-for="Description" class="form-label"></label>
+            <label asp-for="Description" class="form-label text-white">Description</label>
             <input asp-for="Description" class="form-control" />
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
-        <!-- Campo para el monto del gasto -->
         <div class="mb-3">
-            <label asp-for="Amount" class="form-label"></label>
-            <input asp-for="Amount" type="number" step="0.01" class="form-control" />
+            <label asp-for="Amount" class="form-label text-white">Amount</label>
+            <input asp-for="Amount" type="number" class="form-control" />
             <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
 
-        <!-- Botones de acción -->
+        <div class="mb-3">
+            <label asp-for="Date" class="form-label text-white">Date</label>
+            <input asp-for="Date" type="date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save Changes</button>
-        <a href="/Grupos/Detalles/@Model.GroupId" class="btn btn-secondary">Cancel</a>
+        <a asp-action="Detalles" asp-controller="Grupos" asp-route-id="@Model.GroupId" class="btn btn-secondary">Cancel</a>
     </form>
 </div>

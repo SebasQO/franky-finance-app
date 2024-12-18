@@ -62,20 +62,20 @@ namespace FrankyFinance.Controllers
                 _context.Gastos.Add(gasto);
                 _context.SaveChanges();
 
-                // Guarda las divisiones del gasto para los usuarios seleccionados
-                foreach (var division in model.Divisions)
-                {
-                    if (model.SelectedUserIds.Contains(division.UserId))
-                    {
-                        var split = new ExpenseSplit
-                        {
-                            GastoId = gasto.Id,
-                            UserId = division.UserId,
-                            Amount = division.Amount
-                        };
-                        _context.ExpenseSplits.Add(split);
-                    }
-                }
+                //// Guarda las divisiones del gasto para los usuarios seleccionados
+                //foreach (var division in model.Divisions)
+                //{
+                //    if (model.SelectedUserIds.Contains(division.UserId))
+                //    {
+                //        var split = new ExpenseSplit
+                //        {
+                //            GastoId = gasto.Id,
+                //            UserId = division.UserId,
+                //            Amount = division.Amount
+                //        };
+                //        _context.ExpenseSplits.Add(split);
+                //    }
+                //}
 
                 _context.SaveChanges();
                 return RedirectToAction("Detalles", "Grupos", new { id = model.GroupId });
@@ -117,31 +117,38 @@ namespace FrankyFinance.Controllers
                 return NotFound();
             }
 
-            return View(gasto);
+            var model = new Gasto
+            {
+                Id = gasto.Id,
+                Description = gasto.Description,
+                Amount = gasto.Amount,
+                Date = gasto.Date,
+                GroupId = gasto.GroupId
+            };
+
+            return View(model);
         }
 
-        // Procesa la actualización de un gasto existente
         [HttpPost]
-        public IActionResult EditarGasto(Gasto gasto)
+        public IActionResult EditarGasto(Gasto model)
         {
             if (ModelState.IsValid)
             {
-                var existingGasto = _context.Gastos.FirstOrDefault(g => g.Id == gasto.Id);
-                if (existingGasto != null)
+                var gasto = _context.Gastos.FirstOrDefault(g => g.Id == model.Id);
+
+                if (gasto != null)
                 {
-                    // Actualiza los campos del gasto
-                    existingGasto.Description = gasto.Description;
-                    existingGasto.Amount = gasto.Amount;
-                    existingGasto.Date = DateTime.Now;
+                    gasto.Description = model.Description;
+                    gasto.Amount = model.Amount;
+                    gasto.Date = model.Date;
 
                     _context.SaveChanges();
-                    TempData["SuccessMessage"] = "Expense updated successfully!";
-                    return RedirectToAction("Detalles", "Grupos", new { id = existingGasto.GroupId });
+                    return RedirectToAction("Detalles", "Grupos", new { id = gasto.GroupId });
                 }
-
-                TempData["ErrorMessage"] = "Expense not found.";
             }
-            return View(gasto);
+
+            return View(model);
         }
+
     }
 }

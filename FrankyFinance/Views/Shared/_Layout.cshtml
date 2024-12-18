@@ -18,9 +18,10 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/Account/Dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Account/Logout">Logout</a>
-                    </li>
+                    <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+
                 </ul>
             </div>
         </div>

@@ -1,4 +1,6 @@
-﻿namespace FrankyFinance.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FrankyFinance.Models
 {
     // Modelo que representa la relación muchos a muchos entre Group y User
     public class GroupUser
@@ -14,5 +16,7 @@
 
         // Propiedad de navegación: referencia al usuario asociado
         public User User { get; set; }
+
+        public string Role { get; set; }
     }
 }

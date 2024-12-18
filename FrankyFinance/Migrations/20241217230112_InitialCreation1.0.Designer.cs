@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrankyFinance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241210034929_FixPagoConstraints")]
-    partial class FixPagoConstraints
+    [Migration("20241217230112_InitialCreation1.0")]
+    partial class InitialCreation10
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -107,6 +107,10 @@ namespace FrankyFinance.Migrations
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GroupId", "UserId");
 
@@ -215,7 +219,7 @@ namespace FrankyFinance.Migrations
                     b.HasOne("FrankyFinance.Models.User", "User")
                         .WithMany("GroupUsers")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Group");
